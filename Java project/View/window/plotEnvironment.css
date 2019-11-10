@@ -1,0 +1,32 @@
+
+.chart-content {
+    -fx-padding: 0px;
+    -fx-font-size: 12px;    
+    -fx-font-family: "Cambria" ;
+}
+
+.axis-tick-mark, 
+.axis-minor-tick-mark, 
+.chart-vertical-grid-lines, 
+.chart-horizontal-grid-lines{
+    -fx-stroke: transparent;
+}
+
+.axis-label {
+    -fx-tick-label-fill:rgb(0,0,0);
+    -fx-tick-label-font-size: 0.5em;
+
+}
+
+.chart-title{
+	    -fx-font-size: 14px;    
+    -fx-font-family: "Cambria" ;
+}
+
+.chart-legend-item{
+	-fx-font-size: 12px;    
+    -fx-font-family: "Cambria" ;
+}
+
+
+.chart-series-area-line 				{	-fx-stroke-width: 		4px; }

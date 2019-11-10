@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar stylesheets="@../CSSLayout/normalMenu.css" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem fx:id="menuitemClose" mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Defaults">
+                     <items>
+                        <MenuItem fx:id="menuitemOpenOutputViewer" mnemonicParsing="false" text="Open output viewer" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Run">
+                    <items>
+                      <MenuItem fx:id="menuItemRunRunSimulation" mnemonicParsing="false" text="Run simulation">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="menuitemAbout" mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <SplitPane dividerPositions="0.2" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameSplitPane.css" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: black;">
+                     <children>
+                        <GridPane layoutX="-27.0" layoutY="224.0" style="-fx-background-color: rgb(52,57,63);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameMenuButton.css" GridPane.rowIndex="2">
+                                 <children>
+                                    <ToggleButton fx:id="toggleButtonMDP" graphicTextGap="6.0" mnemonicParsing="false" text="Markov decision&#10;process (MDP)" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor></ToggleButton>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </padding>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameMenuButton.css" GridPane.rowIndex="3">
+                                 <children>
+                                    <ToggleButton fx:id="toggleButtonEnvironment" graphicTextGap="6.0" mnemonicParsing="false" text="Environment" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </padding>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameMenuButton.css" GridPane.rowIndex="4">
+                                 <children>
+                                    <ToggleButton fx:id="toggleButtonEstimation" graphicTextGap="6.0" mnemonicParsing="false" text="Estimation" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" top="1.0" />
+                                 </padding>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameMenuButton.css" GridPane.rowIndex="6">
+                                 <children>
+                                    <ToggleButton fx:id="toggleButtonViewSingleEnvironment" graphicTextGap="6.0" mnemonicParsing="false" text="View single &#10;environment" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="1.0" top="2.0" />
+                                 </padding>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameMenuButton.css" GridPane.rowIndex="8">
+                                 <children>
+                                    <ToggleButton fx:id="toggleButtonHeatPlot" graphicTextGap="6.0" mnemonicParsing="false" text="Create heat plot" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" top="1.0" />
+                                 </padding>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameMenuButton.css">
+                                 <children>
+                                    <ToggleButton fx:id="toggleButtonIntroduction" graphicTextGap="6.0" mnemonicParsing="false" text="Introduction" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" top="2.0" />
+                                 </padding>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" stylesheets="@../CSSLayout/Frame/frameMenuButton.css" GridPane.rowIndex="7">
+                                 <children>
+                                    <ToggleButton fx:id="toggleButtonRetrainAgents" graphicTextGap="6.0" mnemonicParsing="false" text="Retrain agents" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </padding>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane fx:id="contentPaneContainer" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
+                     <children>
+                        <ScrollPane fx:id="scrollPane" fitToWidth="true" prefViewportWidth="200.0" stylesheets="@../CSSLayout/normalScrollPane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <AnchorPane fx:id="anchorPaneScrollPane" maxHeight="1.7976931348623157E308" prefHeight="3000.0">
+                                 <children>
+                                    <GridPane AnchorPane.bottomAnchor="-165.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                                        <ColumnConstraints maxWidth="2000.0" minWidth="600.0" prefWidth="1200.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <AnchorPane fx:id="contentPane" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

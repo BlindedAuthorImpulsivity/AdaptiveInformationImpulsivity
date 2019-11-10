@@ -1,0 +1,16 @@
+
+.chart-plot-background{
+	-fx-border-color: 		linear-gradient(to bottom right, rgba(46, 85, 117,0.8), rgba(0,0,0,0.9));
+	-fx-border-width: 		5;
+	-fx-border-insets: 		-5;
+	-fx-background-color: 	linear-gradient(to bottom right, rgba(46, 85, 117,0.8), rgba(0,0,0,0.9));
+}
+.chart-content{
+	-fx-border-color:		rgba(0,0,0,0);
+	-fx-background-color:	rgba(0,0,0,0);
+	-fx-border-width: 		5;
+	-fx-border-insets: 		-5;
+	
+	-fx-font-family:		"Cambria";
+	-fx-font-size:			12px;
+}

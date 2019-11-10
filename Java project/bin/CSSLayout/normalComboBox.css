@@ -1,0 +1,49 @@
+.combo-box .list-cell 
+{
+    -fx-background-color: 	rgba(0,0,0,0);
+    -fx-background:			rgba(0,0,0,0);
+    -fx-text-fill: 			white;
+    -fx-font-size:			12;
+    -fx-font-family:		"Cambria";
+    -fx-padding: 			3 0 2 7;
+    -fx-cell-size: 			1.66667em; 
+}
+
+.combo-box-popup .list-view 
+{
+    -fx-background-color: rgba(0,0,0,0.5);
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}    
+
+
+.combo-box-popup .list-view  .scroll-bar:vertical {
+	-fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, 
+.combo-box-popup .list-view .list-cell:filled:selected:hover,
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: rgba(190,49,26,0.8);
+    -fx-text-fill: white;
+}
+
+
+.combo-box-base  
+{
+    -fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.combo-box-base:hover,
+.combo-box-base:showing 
+{
+    -fx-color: rgb(190,49,26);
+    -fx-background-color: rgb(190,49,26);
+}
+
+
+.combo-box .arrow, .combo-box .arrow-button .arrow
+{
+	-fx-background-color: white;
+}

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="600.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox cacheShape="false" depthTest="ENABLE" nodeOrientation="LEFT_TO_RIGHT" prefHeight="1500.0" prefWidth="598.0" spacing="20.0" style="-fx-background-color: rgba(0,0,0,0);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TitledPane stylesheets="@../CSSLayout/normalTitledPane.css" text="State space parameters">
+               <content>
+                  <AnchorPane depthTest="DISABLE" minHeight="0.0" minWidth="0.0" prefHeight="150.0">
+                     <children>
+                        <GridPane layoutX="32.0" layoutY="57.0" maxHeight="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Maximum resource quality and extrinsic events:" wrapText="true">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Step size resource quality and extrinsic events:" wrapText="true" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Step size somatic state:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="textFieldValueMax" alignment="CENTER_RIGHT" promptText="Please provide numeric value" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="The maximum number of cues an agent can sample during &#10;each resource encounter.&#10; &#10;Note that the runtime of the algorithm is exponential in&#10;the number of cue values - it is adviced to use low numbers." wrapText="true" />
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="textFieldValueStep" alignment="CENTER_RIGHT" promptText="Please provide numeric value" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="The number of values a cue can take on.&#10;For example, if cues can have two values, these&#10;values correspond to {&quot;negative cue&quot;, &quot;positive cue&quot;).&#10;&#10;Note that the runtime of the algorithm is exponential in&#10;the number of cue values - it is adviced to use low numbers." />
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="textFieldBudgetMax" alignment="CENTER_RIGHT" promptText="Please provide numeric value" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="Governs how well cues predict the true value of&#10;a resource during sampling (see image to the right).&#10;&#10;How the cue reliability affects the cue emission probabilities&#10;for each true value depends on how the cue emissions are&#10;defined. For linear cue emissions this parameter does nothing.&#10;For normally distributed cues this parameters determines&#10;the variance." />
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Maximum somatic state:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="textFieldBudgetStep" alignment="CENTER_RIGHT" disable="true" editable="false" promptText="Please provide numeric value" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="Governs how well cues predict the true value of&#10;a resource during sampling (see image to the right).&#10;&#10;How the cue reliability affects the cue emission probabilities&#10;for each true value depends on how the cue emissions are&#10;defined. For linear cue emissions this parameter does nothing.&#10;For normally distributed cues this parameters determines&#10;the variance." />
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </TitledPane>
+            <TitledPane stylesheets="@../CSSLayout/normalTitledPane.css" text="Task parameters">
+               <content>
+                  <AnchorPane depthTest="DISABLE" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1119.0">
+                     <children>
+                        <GridPane minHeight="350.0" prefHeight="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" percentHeight="74.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Maximum cues:" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Cost of sampling:" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="textFieldCueMax" alignment="CENTER_RIGHT" promptText="Please provide integer" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="The maximum number of cues an agent can sample during &#10;each resource encounter.&#10; &#10;Note that the runtime of the algorithm is exponential in&#10;the number of cue values - it is adviced to use low numbers." wrapText="true" />
+                                 </tooltip>
+                              </TextField>
+                              <TextField fx:id="textFieldCueCost" alignment="CENTER_RIGHT" promptText="Please provide numeric value" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                                 <tooltip>
+                                    <Tooltip text="How much budget does sampling a cue cost? " />
+                                 </tooltip>
+                              </TextField>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button fx:id="buttonCueEmissionOptions" maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../CSSLayout/normalButton.css" text="Change cue reliability" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <AreaChart fx:id="cueEmissionsPlot" legendSide="RIGHT" stylesheets="@plotCueEmissions.css" title="Cue reliability" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+                                 <xAxis>
+                                    <NumberAxis fx:id="cueEmissionsPlotXAxis" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis fx:id="cueEmissionsPlotYAxis" side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                              <CheckBox fx:id="checkBoxCompoundInterruption" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" stylesheets="@../CSSLayout/normalCheckBox.css" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="18.0" />
+                                 </GridPane.margin>
+                              </CheckBox>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Use compound &#10;interruption rate:" visible="false" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TitledPane>
+            <TitledPane stylesheets="@../CSSLayout/normalTitledPane.css" text="Fitness parameters">
+               <content>
+                  <AnchorPane depthTest="DISABLE" minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="1119.0">
+                     <children>
+                        <GridPane layoutX="16.0" layoutY="16.0" minHeight="350.0" prefHeight="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="End-of-life somatic state to fitness mapping:" textAlignment="CENTER" wrapText="true" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" stylesheets="@../CSSLayout/normalLabel.css" text="Discount rate:" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="textFieldFitnessFunction" alignment="CENTER_RIGHT" promptText="Please provide string" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="The function that maps the budget to the &#10;fitness. Please provide a function of the form&#10;&quot;fitness = x&quot;, using x to denote the budget.&#10;&#10;This function cannot be longer than 200 characters&#10;and cannot include a &quot;;&quot;. All functionality provided &#10;in R can be used here (e.g., exp(x) or log(x) ). " wrapText="true" />
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="textFieldDiscount" alignment="CENTER_RIGHT" promptText="Please provide integer" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="The number of values a cue can take on.&#10;For example, if cues can have two values, these&#10;values correspond to {&quot;negative cue&quot;, &quot;positive cue&quot;).&#10;&#10;Note that the runtime of the algorithm is exponential in&#10;the number of cue values - it is adviced to use low numbers." />
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <LineChart fx:id="fitnessPlot" stylesheets="@plotBudgetToFitness.css" title="Somatic state to fitness mapping" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                 <xAxis>
+                                    <NumberAxis fx:id="fitnessPlotXAxis" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis fx:id="fitnessPlotYAxis" side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" percentHeight="82.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TitledPane>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

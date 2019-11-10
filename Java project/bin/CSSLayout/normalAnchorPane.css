@@ -1,0 +1,4 @@
+/* To use, make sure that the ID (not fx:id) is set to "anchor" */
+#darkAnchor {
+	-fx-background-color: rgba(0,0,0,0);
+}

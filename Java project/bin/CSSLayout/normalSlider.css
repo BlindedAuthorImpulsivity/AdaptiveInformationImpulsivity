@@ -1,0 +1,9 @@
+.slider .thumb:pressed {
+    -fx-color: rgba(190, 49, 26, 1);
+}
+
+.slider > .axis {
+    -fx-tick-label-font-size: 10px; 
+    -fx-tick-label-font-family: "Cambria";
+    -fx-tick-label-fill: -fx-text-background-color;
+}

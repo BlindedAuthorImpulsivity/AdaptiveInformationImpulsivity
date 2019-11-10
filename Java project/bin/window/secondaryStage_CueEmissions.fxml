@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import decimalNumber.DecimalNumberMatrixTableView?>
+
+<AnchorPane fx:id="rootAnchor" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="124.0" layoutY="183.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" percentHeight="18.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="2.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="2.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="8.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DecimalNumberMatrixTableView fx:id="tableViewMatrix" editable="true" prefHeight="200.0" prefWidth="200.0" stylesheets="@../CSSLayout/normalTableView.css" GridPane.rowIndex="2">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns></DecimalNumberMatrixTableView>
+            <Separator prefWidth="200.0" GridPane.rowIndex="3" />
+            <GridPane GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="23.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="23.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="23.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane GridPane.columnIndex="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <children>
+                        <Button fx:id="buttonDone" alignment="CENTER" mnemonicParsing="false" stylesheets="@../CSSLayout/importantButton.css" text="Done" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="buttonAddValue" layoutX="2.0" layoutY="1.0" mnemonicParsing="false" stylesheets="@../CSSLayout/normalButton.css" text="Add row" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="Cambria Math" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane GridPane.columnIndex="2">
+                     <children>
+                        <Button fx:id="buttonDeleteValue" layoutX="2.0" layoutY="1.0" mnemonicParsing="false" stylesheets="@../CSSLayout/normalButton.css" text="Delete row" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <Button fx:id="buttonChangeCueLabels" mnemonicParsing="false" stylesheets="@../CSSLayout/normalButton.css" text="Change labels" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+            <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+            <GridPane style="-fx-background-color: white;" vgap="10.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                     <children>
+                        <ComboBox fx:id="comboBoxCueEmissionType" prefWidth="250.0" stylesheets="@../CSSLayout/normalComboBox.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="labelCueEmissionArgument" prefHeight="16.0" prefWidth="310.0" stylesheets="@../CSSLayout/normalLabel.css" text="Argument:" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <AnchorPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                     <children>
+                        <TextField fx:id="textFieldCueEmissionArgument" alignment="CENTER_RIGHT" promptText="Please provide numeric value" stylesheets="@../CSSLayout/normalTextField.css" text="1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Governs how well cues predict the true value of&#10;a resource during sampling (see image to the right).&#10;&#10;How the cue reliability affects the cue emission probabilities&#10;for each true value depends on how the cue emissions are&#10;defined. For linear cue emissions this parameter does nothing.&#10;For normally distributed cues this parameters determines&#10;the variance." />
+                           </tooltip>
+                        </TextField>
+                     </children>
+                  </AnchorPane>
+                  <Label prefHeight="15.0" prefWidth="146.0" stylesheets="@../CSSLayout/normalLabel.css" text="Distribution:">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                     <children>
+                        <Spinner fx:id="spinnerCueLabels" editable="true" prefHeight="25.0" prefWidth="236.0" stylesheets="@../CSSLayout/normalSpinner.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tooltip>
+                              <Tooltip text="The number of values a cue can take on.&#10;For example, if cues can have two values, these&#10;values correspond to {&quot;negative cue&quot;, &quot;positive cue&quot;).&#10;&#10;Note that the runtime of the algorithm is exponential in&#10;the number of cue values - it is adviced to use low numbers." />
+                           </tooltip>
+                        </Spinner>
+                     </children>
+                  </AnchorPane>
+                  <Label stylesheets="@../CSSLayout/normalLabel.css" text="Number of different cues:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

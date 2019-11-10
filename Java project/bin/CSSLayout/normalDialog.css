@@ -1,0 +1,36 @@
+.dialog-pane{
+    -fx-background-color: white;
+}
+.dialog-pane > *.button-bar > *.container{
+    -fx-background-color: white;
+}
+.dialog-pane > *.label.content{
+	-fx-font-family: "Cambria";
+    -fx-font-size: 12px;
+     -fx-padding: 1em 1em 1em 1em; /* 10px 14px 10px 14px */
+}
+.dialog-pane:header *.header-panel{
+      -fx-padding: 1em 1em 1em 1em; /* 10px 14px 10px 14px */
+ 
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+.dialog-pane:header *.header-panel *.label{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+
+.dialog-pane  .button {
+	-fx-background-color: linear-gradient(to bottom,  rgba(0,0,0,1) 0%, rgba(25,25,25,1) 100%);
+	-fx-text-fill: white;
+	-fx-font-family: "Cambria";
+	-fx-font-weight: bold;
+	-fx-font-size: 12px;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+.dialog-pane  .button:hover{
+    -fx-background-color: linear-gradient(rgba(190,49,26,1), rgba(190,49,26,0.8));
+    -fx-text-fill: white;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+}

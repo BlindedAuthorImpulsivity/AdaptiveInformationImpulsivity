@@ -1,0 +1,11 @@
+
+.check-box > .box {
+	-fx-background-color: rgba(0,0,0,0);
+	-fx-border-color: black;
+	-fx-text-fill: black;
+	 -fx-background-insets: 10, 10, 10, 10;
+}
+
+.check-box:selected > .box >.mark{
+	-fx-background-color: black;
+}

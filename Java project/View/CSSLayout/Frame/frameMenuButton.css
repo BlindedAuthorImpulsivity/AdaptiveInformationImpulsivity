@@ -1,0 +1,25 @@
+.toggle-button {
+	-fx-background-color:    linear-gradient(to bottom,   rgb(42,47,53) 0%,   rgb(52,57,63)  100%);
+        					
+	-fx-background-insets: 	0 0 0 0;
+	-fx-text-fill: 			white;
+	-fx-font-family: 		"Cambria";
+	-fx-font-size: 			13px;
+	-fx-text-alignment: "left";
+}
+
+.toggle-button:hover {
+	-fx-background-color:   linear-gradient(rgb(95,24,12)  0%,	rgb(190,49,26) 50%),
+							linear-gradient(to bottom, rgb(68,73,77) 0%, rgb(58,63,67) 100%);
+        					
+    -fx-background-radius: 	8,7,6;
+    -fx-background-insets: 	0 0 0 0, 0 0 0 5;
+	-fx-text-fill: 			white;
+}
+.toggle-button:selected{
+    -fx-background-color:  linear-gradient(rgb(95,24,12)  0%,	rgb(190,49,26) 50%),
+							linear-gradient(to bottom, rgb(88,93,97) 0%, rgb(78,83,87) 100%);
+	      					
+    -fx-background-insets: 	0 0 0 0, 0 0 0 5;
+	-fx-text-fill: 			white  ;
+}

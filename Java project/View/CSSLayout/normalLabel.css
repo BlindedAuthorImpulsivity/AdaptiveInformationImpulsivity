@@ -1,0 +1,40 @@
+.label {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 12px;
+	-fx-text-alignment: "left";
+}
+
+#blackBackground {
+	-fx-text-fill: 			white;
+}
+
+#explanation {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 10px;
+	-fx-font-style: italic ;
+	-fx-text-alignment: "center";
+}
+
+#progress_bar {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 14px;
+	-fx-text-fill: 			black;
+}
+
+#header {
+	 
+    -fx-background-insets: 10,1,4,5;
+    -fx-background-radius: 19,8,5,4;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(50,50,70);
+
+	-fx-alignment: center;
+    -fx-font-family: "Cambria";
+	-fx-font-weight: bold;
+	-fx-font-size: 12px;
+}
+
+#smallPrint {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 10px;
+}

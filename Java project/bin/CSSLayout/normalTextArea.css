@@ -1,0 +1,82 @@
+.text-area {
+	-fx-font-family: "Consola";
+	-fx-font-size: 12px;
+	-fx-border-color: black;
+	-fx-text-fill: black;
+	-fx-border-width: 2.5;
+	-fx-border-color: rgba(100,100,110,1);
+}
+
+.text-area .content {
+    -fx-background-color: white ;
+}
+
+/* Scroll bar */
+.scroll-bar{
+ -fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+ -fx-background-radius: 1em;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+ -fx-background-color: transparent;
+ -fx-border-color:transparent;
+ -fx-background-radius: 2em;
+}
+.scroll-bar .track-background {
+ -fx-background-color: transparent;
+ -fx-background-insets: 0;
+ -fx-background-radius: 50em;
+}
+
+.scroll-bar .thumb {
+ -fx-background-color: rgb(211,211,211);
+ -fx-background-insets: 4 4 4 4;
+ -fx-background-radius: 2em;
+}
+.scroll-bar .thumb:hover {
+ -fx-background-color:linear-gradient(to bottom,  rgba(190, 49, 26,1) 0%,  rgba(190, 49, 26,0.5) 100%)
+}
+.scroll-bar .thumb:pressed {
+ -fx-background-color: linear-gradient(to bottom,  rgba(190, 49, 26,1) 0%,  rgba(190, 49, 26,0.5) 100%)
+}
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+ -fx-background-color:transparent;
+ -fx-background-radius: 2em;
+ -fx-padding: 5;
+}
+.scroll-bar:vertical .increment-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 0;
+}
+.scroll-bar:horizontal .increment-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 270;
+}
+.scroll-bar:vertical .decrement-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 180;
+}
+.scroll-bar:horizontal .decrement-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 90;
+}
+
+.scroll-bar:horizontal .decrement-arrow:hover,
+.scroll-bar:horizontal .increment-arrow:hover,
+.scroll-bar:vertical .decrement-arrow:hover,
+.scroll-bar:vertical .increment-arrow:hover {
+ -fx-background-color:  rgba(190, 49, 26,1);
+ -fx-body-color:		rgba(190, 49, 26,1);
+}
+.scroll-bar:vertical:focused,
+.scroll-bar:horizontal:focused {
+ -fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
+}

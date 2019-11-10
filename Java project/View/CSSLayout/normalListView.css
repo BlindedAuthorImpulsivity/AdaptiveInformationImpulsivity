@@ -1,0 +1,40 @@
+.corner {-fx-background-color: rgba(0,0,0,0);}
+
+.list-cell {
+    -fx-font-size: 12px;
+    -fx-font-family: "Cambria";
+    -fx-text-fill: white;
+}
+
+.list-view {
+	-fx-background-color:  black ,-fx-box-border,rgba(100,100,110,1);
+	-fx-border-color: black;
+  	-fx-background-insets: -1.4, 0, 1;
+  	-fx-background-radius: 1.4, 0, 0;
+}
+
+
+.list-view .scroll-bar {
+	-fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.list-view .scroll-bar .thumb{
+	-fx-background-color: rgba(190, 49, 26,1) ;
+}
+
+.list-view .scroll-bar .thumb:hover{
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #be311a;
+   -fx-text-background-color: #ffffff ;
+}
+
+
+
+.list-cell:odd { -fx-background-color: 	rgba(60, 60, 70,1); }
+.list-cell:even { -fx-background-color: rgba(100,100,110,1); }
+.list-cell:filled:hover { 
+    -fx-background-color:  rgba(190, 49, 26, 0.9);
+}

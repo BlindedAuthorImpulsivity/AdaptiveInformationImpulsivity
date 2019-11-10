@@ -1,0 +1,7 @@
+.label {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 14px;
+	-fx-text-alignment: "center";
+	-fx-text-fill: 			white;
+	-fx-font-style: italic ;
+}

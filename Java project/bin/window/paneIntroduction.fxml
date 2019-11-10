@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="500.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea editable="false" prefHeight="350.0" prefWidth="545.0" stylesheets="@../CSSLayout/normalTextArea.css" text="This JAVA project accompanies the following publication:&#10;&#10;Is  Impulsive Behavior Adaptive in Harsh and Unpredictable Environments? A Formal Model &#10;By Jesse Fenneman and Willem E. Frankenhuis (2019)&#10;&#10;*** If there are any errors or missing functionality, please contact Jesse Fenneman at jessefenneman@gmail.com ***&#10;&#10;This program contains two separate parts.&#10;&#9;&#10;The first part consists of the tabs that allow the user to specify new simulations. See 'Creating new simulation' below for further information. You can start a new simulation via Run&gt;Run simulation or by pressing ctrl+R.&#10;&#9;&#10;The second part consists of all tools with which a previously ran simulation can be analyzed. See 'Analyzing results'  for more information.&#10;&#10;" wrapText="true" GridPane.rowIndex="1" />
+            <Label text="Introduction" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Creating new simulations" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Analyzing results" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextArea editable="false" prefHeight="350.0" prefWidth="545.0" stylesheets="@../CSSLayout/normalTextArea.css" text="This section is about the top three tabs on the left hand side, named ' Markov decision process' , ' Environment' , and 'Estimation'.  &#10;&#10;The Markov Decision Process is the formal specification of the decision problem that an agent has to solve. This problem is described in detail in 'Appendix B. A formal description of the decision problem' . In the 'Markov decision process'  tab you can specify all parameters that are described in this appendix. &#10;&#10;In the 'Environments'  tab you can specify what environment you wish to study. Note that each environment contains exactly one agent. An environment contains (at least in this version) 5 separate parameters: the mean resource quality, the standard deviation in resource quality, the mean extrinsic event quality, the standard deviation in extrinsic event qualities, and the interruption rate. &#10;&#9;&#10;There are two ways to create an environment: fully specified or lazily generated. A fully specified environment is created by the user in the first table.  A fully specified environment is individually customizable by the user and exists before the run starts. At the moment the extrinsic event and resource quality distributions can be set to either a normal or uniform distribution. After setting a distribution, you can manually adjust the these distributions by selecting the ' set manual distribution'  option. &#10;&#9;&#10;The second options is to lazily generate environments. These environments are created by the system when an that environment is studied. As such, it is way more memory friendly. Lazy environments cannot be specified manually  - resource quality and extrinsic event quality distributions can only be described by a function, not by individually changed probabilities. Because this program does not allow users to manually specify lazy environments, you can create the lazy environments in bulk (since they only need the parameters of the distribution before they are created). It is highly recommended to use this option if you are running large numbers of environments.&#10;&#10;In the 'Estimation' tab you can specify parameters that relate to how long and how thoroughly the algorithm will be. Please consult 'Appendix C. Computing the optimal policy and information impulsivity' for more information on these parameters. In addition, here you can designate the number of concurrent threads the program will use. To keep your operating system functioning and responsive, I recommend using at most [# threads supported by your CPU - 1] threads. Finally, some of the parameters in this tab are place holders for possible future extensions; in this version they have only one possible value. &#10;&#10;A note on runtime: in most cases the algorithm will use very small number (&gt; 0.0000001). This can be problematic, as such numbers can fall victim to a floating point rounding error (see https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems). To make sure that a run is not compromised by such errors, this program uses a class called DecimalNumber to represent decimal numbers. This is class we have created for this program, and is a wrapper for JAVA's BigDecimal format, with some build in checks (e.g., probability distributions should always sum to 1). This class makes the computation very accuracy, and checks for common issues. However, it also makes the algorithm very, very slow. To decrease runtime, we have spent considerable effort optimizing the code. One optimization was to use a lower accuracy in some key phases of the computational problem. We have tested this optimization extensively, and found no difference between the optimized and the non-optimized code. However, we cannot guaranteed its precision. We therefore provide multiple optimizers, and call the high-speed-potentially-not-accurate optimizer the 'lossy optimizer'. We have used this optimizer for all our runs.&#10;&#10;&#10;" wrapText="true" GridPane.rowIndex="4" />
+            <TextArea editable="false" prefHeight="350.0" prefWidth="545.0" stylesheets="@../CSSLayout/normalTextArea.css" text="This section is about the bottom three tabs on the left hand side, named ' View single environment',  'Retrain agents' , and 'Create heat plot'.&#10;&#10;The 'View single environment'  tab allows the user to study the policy of a single agent in-depth. After a simulation is finished, you can load the results into the program by selecting the folder where the results were saved. Use the 'ref'  to reload the files if necessary. After all files are loaded, you can select individual agents by selecting the agent in the table. After selecting an agent the details of that agent will be presented in the 'Details of selected agent' section. The optimal policy of that selected agent can be viewed in the Optimal policy of selected agent pass. This section will generate decision tree' s as described in 'Appendix C. Computing the optimal policy and information impulsivity''. These trees can be customized in several ways (also try clicking on the individual nodes!).&#10;&#10;The 'View single environment'  tab also provides another important feature. After loading agents, you can create a .csv file that contains the results of all agents currently loaded in the 'Merge agents in specified folder to .CSV file'. This CSV file is required for the final tab, 'Create heat plot'.&#10;&#10;The 'Retrain agents'  tab allows the user to retrain an agent - for instance, by changing the somatic-state-to-fitness mapping. &#10;&#10;Finally, the 'Create heat plot'  tab allows an easy drag-and-drop way to plot the results of multiple agents at the same time. At the moment this functionality is relatively limited. However, in the project folder, in 'AdaptiveInformationImpulsivity\AdaptiveInformationImpulsivity\Java project\sourceFolder\Rscripts', there is a .R script called 'heatPlot version 3.R'. This script contains an easy to use function to create similar heat plots as presented in appendices E, F, and G, as well as in the main text. This function is heavily commented and provides many more options than are provided here. We highly recommend that you use this Rscript directly via R. The functionality here is for simple checks to see if a run was specified correctly.&#10; &#10;&#10;&#10;&#10;" wrapText="true" GridPane.rowIndex="7" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

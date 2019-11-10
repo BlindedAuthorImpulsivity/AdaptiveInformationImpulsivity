@@ -1,0 +1,50 @@
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-body-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-body-color:linear-gradient(to bottom,  rgba(190, 49, 26,1) 0%,  rgba(190, 49, 26,0.5) 100%)
+}
+
+
+.spinner .increment-arrow-button .increment-arrow,
+.spinner .decrement-arrow-button .decrement-arrow
+{
+	-fx-background-color: white;
+}
+
+
+.spinner .increment-arrow-button:hover:pressed,
+.spinner .decrement-arrow-button:hover:pressed,
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed {
+    -fx-body-color: white;
+}
+
+.spinner .increment-arrow-button:hover:pressed .increment-arrow,
+.spinner .decrement-arrow-button:hover:pressed .decrement-arrow
+{
+	-fx-background-color:  rgba(190, 49, 26,1) ;
+}
+.text-input .text-input:focused {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 12px;
+
+	-fx-background-color: rgba(0,0,0,0);
+	-fx-border-color: black;
+	-fx-text-fill: black;
+}
+
+
+.text-input .text{
+	-fx-text-alignment: left;
+}
+
+.error {
+  -fx-border-color: 	rgb(255,0,0) ;
+  -fx-text-fill: 		black;
+  -fx-background-color: linear-gradient(to bottom, rgba(200,0,0,0.2) 5%,  rgba(250,0,0,0.2) 40%);
+}
+

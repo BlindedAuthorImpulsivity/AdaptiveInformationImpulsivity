@@ -1,0 +1,72 @@
+/* LABEL */
+.label  {
+  -fx-background-color:
+        linear-gradient(rgb(97,97,104) 0%,
+        				rgb(35,39,50) 25%,
+        				rgb(55,56,55) 75%,
+        				rgb(113,113,125) 100%
+        ),
+        linear-gradient(rgb(185,185,185) 0%,
+        	rgb(194,194,194) 20%,
+        	rgb(175,175,175) 80%,
+        	rgb(200,200,200) 100%
+        ),
+
+        linear-gradient(rgb(230	,230,230) 0%,
+        	rgb(197,197,197) 50%,
+        	rgb(180,180,190) 51%,
+        	rgb(215,215,225) 100%
+        );
+    -fx-background-insets: 10,1,4,5;
+    -fx-background-radius: 19,8,5,4;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(50,50,70);
+
+	-fx-alignment: center;
+    -fx-font-family: "Cambria";
+	-fx-font-weight: bold;
+	-fx-font-size: 18px;
+}
+
+
+/*TABLE VIEW */
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0.0%, #424141 100.0%);
+}
+
+.table-view .column-header{
+	-fx-font-familiy: "Cambria";
+	-fx-font-size: 16;
+}
+
+
+.table-view .table-column{
+    -fx-alignment:center;
+    -fx-font-size: 14;
+}
+
+.table-row-cell:selected {
+   -fx-background-color: #be311a;
+   -fx-text-background-color: #ffffff ;
+}
+
+.combo-box .cell{
+    -fx-text-fill: black;
+}
+
+/* BUTTON */
+.button {
+	-fx-background-color: linear-gradient(rgba(190,49,26,1), rgba(190,49,26,0.8));
+	-fx-text-fill: linear-gradient(white, #d0d0d0);
+	-fx-font-family: "Cambria";
+	-fx-font-weight: bold;
+	-fx-font-size: 15px;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+	-fx-background-radius: 10;
+}
+.button:hover{
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+   	-fx-background-radius: 10;
+    -fx-text-fill: -fx-text-base-color;
+}

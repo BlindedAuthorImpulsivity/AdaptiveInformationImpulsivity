@@ -1,0 +1,343 @@
+.pane {
+	-fx-background-color: red;
+}
+
+/* Titled pane */
+.titled-pane {
+	-fx-text-fill: 			white;
+	-fx-font-family: "Cambria";
+	-fx-font-size: 14px;
+}
+
+.titled-pane > .title 
+{
+-fx-background-color:   	linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+-fx-background-insets: 0, 1, 2;
+-fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+-fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+}
+
+.titled-pane > .title > .arrow-button .arrow 
+{
+	-fx-background-color: white;
+}
+
+
+
+
+
+/* Buttons */
+.button {
+	-fx-background-color: linear-gradient(rgba(190,49,26,1), rgba(190,49,26,0.8));
+	-fx-text-fill: linear-gradient(white, #d0d0d0);
+	-fx-font-family: "Cambria";
+	-fx-font-weight: bold;
+	-fx-font-size: 12px;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+	-fx-background-radius: 10;
+}
+.button:hover{
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+   	-fx-background-radius: 10;
+    -fx-text-fill: -fx-text-base-color;
+}
+
+
+
+
+
+/* Scroll bar */
+.scroll-bar{
+ -fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+ -fx-background-radius: 1em;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+ -fx-background-color: transparent;
+ -fx-border-color:transparent;
+ -fx-background-radius: 2em;
+}
+.scroll-bar .track-background {
+ -fx-background-color: transparent;
+ -fx-background-insets: 0;
+ -fx-background-radius: 50em;
+}
+
+.scroll-bar .thumb {
+ -fx-background-color: rgb(211,211,211);
+ -fx-background-insets: 4 4 4 4;
+ -fx-background-radius: 2em;
+}
+.scroll-bar .thumb:hover {
+ -fx-background-color:linear-gradient(to bottom,  rgba(190, 49, 26,1) 0%,  rgba(190, 49, 26,0.5) 100%)
+}
+.scroll-bar .thumb:pressed {
+ -fx-background-color: linear-gradient(to bottom,  rgba(190, 49, 26,1) 0%,  rgba(190, 49, 26,0.5) 100%)
+}
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+ -fx-background-color:transparent;
+ -fx-background-radius: 2em;
+ -fx-padding: 5;
+}
+.scroll-bar:vertical .increment-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 0;
+}
+.scroll-bar:horizontal .increment-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 270;
+}
+.scroll-bar:vertical .decrement-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 180;
+}
+.scroll-bar:horizontal .decrement-arrow {
+ -fx-background-color: white;
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 90;
+}
+
+.scroll-bar:horizontal .decrement-arrow:hover,
+.scroll-bar:horizontal .increment-arrow:hover,
+.scroll-bar:vertical .decrement-arrow:hover,
+.scroll-bar:vertical .increment-arrow:hover {
+ -fx-background-color:  rgba(190, 49, 26,1);
+ -fx-body-color:		rgba(190, 49, 26,1);
+}
+.scroll-bar:vertical:focused,
+.scroll-bar:horizontal:focused {
+ -fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
+}
+
+
+
+
+
+
+
+
+/* Table view */
+.corner {-fx-background-color: rgba(0,0,0,0);}
+
+.table-cell {
+    -fx-font-size: 12px;
+    -fx-font-family: "Cambria";
+    -fx-text-fill: white;
+}
+
+.table-view {
+	-fx-background-color: black ,-fx-box-border,rgba(100,100,110,1);
+  	-fx-background-insets: -1.4, 0, 1;
+  	-fx-background-radius: 1.4, 0, 0;
+  	
+}
+
+.table-view .label{
+	-fx-text-fill: white;
+	 -fx-font-size: 10px;
+    -fx-font-family: "Cambria";
+    -fx-text-fill: white;
+}
+
+.table-view > .column-header-background > .filler {
+	-fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.table-view .arrow {
+	-fx-background-color: white;
+}
+.table-view .column-header{
+    -fx-background-color:  	linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%), 
+    						linear-gradient(to bottom,  rgba(190, 49, 26,1) 0%,  rgba(190, 49, 26,0.5) 100%);
+    -fx-border-color: black;
+}
+
+.table-view .column-header .label{
+     -fx-background-color: transparent; 
+    -fx-font-weight:bold;
+    -fx-font-family: "Cambria";
+    -fx-text-fill: white;
+	-fx-font-size: 12;
+	-fx-wrap-text: true;
+}
+
+.table-column:selected {
+   -fx-background-color: #be311a;
+   -fx-text-background-color: #ffffff ;
+   -fx-background-color: #be311a ,-fx-box-border,-fx-control-inner-background;
+   -fx-border-width: 0 1 0 1;
+}
+
+.table-view .table-column{
+    -fx-alignment:center;
+    -fx-font-family: "Cambria";
+    -fx-font-size: 12;
+}
+
+.table-row-cell:filled:hover { 
+    -fx-background-color:  rgba(190, 49, 26, 0.9);
+}
+.table-row-cell:filled:selected {
+   -fx-background-color: #be311a;
+   -fx-text-background-color: white ;
+}
+
+.table-row-cell:odd { -fx-background-color: 	rgba(60, 60, 70,1); }
+.table-row-cell:even { -fx-background-color: rgba(100,100,110,1); }
+
+
+
+
+
+
+/* LAYOUT OF OBJECTS IN THE CELLS */
+.text-field-table-cell .text-field {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 12px;
+
+	-fx-background-color: white;
+	-fx-border-color: white;
+	-fx-text-fill: black;
+}
+
+
+.text-field-table-cell .text-field .text{
+	-fx-text-alignment: left;
+}
+
+
+
+
+
+
+.combo-box-table-cell .combo-box .list-cell 
+{
+    -fx-background-color: 	rgba(0,0,0,0);
+    -fx-background:			rgba(0,0,0,0);
+    -fx-text-fill: 			white;
+    -fx-padding: 			3 0 2 7;
+    -fx-cell-size: 			1.66667em; 
+}
+
+.combo-box-table-cell .combo-box-popup .list-view 
+{
+    -fx-background-color: rgba(0,0,0,0.3);
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}    
+
+
+.combo-box-table-cell .combo-box-popup .list-view  .scroll-bar:vertical {
+	-fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.combo-box-table-cell .combo-box-popup .list-view .list-cell:filled:selected, 
+.combo-box-table-cell .combo-box-popup .list-view .list-cell:filled:selected:hover,
+.combo-box-table-cell .combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: rgba(255,255,255,0.75);
+    -fx-text-fill: black;
+}
+
+
+.combo-box-table-cell .combo-box-base  
+{
+    -fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.combo-box-table-cell .combo-box-base:hover,
+.combo-box-table-cell .combo-box-base:showing 
+{
+    -fx-color: rgb(46, 85, 117);
+    -fx-background-color:rgb(46, 85, 117);
+}
+
+
+.combo-box-table-cell .combo-box .arrow, .combo-box .arrow-button .arrow
+{
+	-fx-background-color: white;
+}
+
+
+/* Area chart */
+.chart-plot-background{
+	-fx-border-color: 		white;
+	-fx-border-width: 		5;
+	-fx-border-insets: 		-5;
+	-fx-background-color: 	white;
+}
+.chart-content{
+	-fx-border-color:		rgba(0,0,0,0);
+	-fx-background-color:	rgba(0,0,0,0);
+	-fx-border-width: 		5;
+	-fx-border-insets: 		-5;
+	
+	-fx-font-family:		"Cambria";
+	-fx-font-size:			12px;
+}
+
+/* Combo box */
+.combo-box .list-cell 
+{
+    -fx-background-color: 	rgba(0,0,0,0);
+    -fx-background:			rgba(0,0,0,0);
+    -fx-text-fill: 			white;
+    -fx-font-size:			12;
+    -fx-font-family:		"Cambria";
+    -fx-padding: 			3 0 2 7;
+    -fx-cell-size: 			1.66667em; 
+}
+
+.combo-box-popup .list-view 
+{
+    -fx-background-color: rgba(0,0,0,0.5);
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}    
+
+
+.combo-box-popup .list-view  .scroll-bar:vertical {
+	-fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, 
+.combo-box-popup .list-view .list-cell:filled:selected:hover,
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: rgba(190,49,26,0.8);
+    -fx-text-fill: white;
+}
+
+
+.combo-box-base  
+{
+    -fx-background-color: linear-gradient(to bottom,  rgba(25, 25, 25,1) 0%, rgba(90,90,100,1) 100%);
+}
+
+.combo-box-base:hover,
+.combo-box-base:showing 
+{
+    -fx-color: rgb(190,49,26);
+    -fx-background-color: rgb(190,49,26);
+}
+
+
+.combo-box .arrow, .combo-box .arrow-button .arrow
+{
+	-fx-background-color: white;
+}
+
+/* LABEL */
+.label {
+	-fx-font-family: "Cambria";
+	-fx-font-size: 12px;
+	-fx-text-alignment: "left";
+}

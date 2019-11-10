@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="600.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox cacheShape="false" depthTest="ENABLE" nodeOrientation="LEFT_TO_RIGHT" prefHeight="1204.0" prefWidth="598.0" spacing="20.0" style="-fx-background-color: rgba(0,0,0,0);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+         <children>
+            <TitledPane stylesheets="@../CSSLayout/normalTitledPane.css" text="Select value functions/agents">
+               <content>
+                  <AnchorPane depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" percentHeight="2.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Input folder:">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="textfieldFolderInput" disable="true" editable="false" promptText="Path\To\Directory" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <GridPane GridPane.columnIndex="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="buttonRefreshFolderInput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../CSSLayout/normalButton.css" text="Ref">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button fx:id="buttonBrowseFolderInput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../CSSLayout/normalButton.css" text="Browse" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Include subfolders:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="checkBoxSubDirectories" mnemonicParsing="false" stylesheets="@../CSSLayout/normalCheckBox.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </CheckBox>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Agents in (sub)folder:" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tableviewOutputShadows" prefHeight="119.0" prefWidth="1049.0" stylesheets="@../CSSLayout/normalTableView.css" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+                              <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button fx:id="buttonSelectAll" maxWidth="80.0" minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" stylesheets="@../CSSLayout/normalButton.css" text="Select all" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button fx:id="buttonUnselectAll" maxWidth="80.0" minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" stylesheets="@../CSSLayout/normalButton.css" text="Unselect all" />
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="buttonResetChanges" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" stylesheets="@../CSSLayout/normalButton.css" text="Reset changes" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TitledPane>
+            <TitledPane prefWidth="588.0" stylesheets="@../CSSLayout/normalTitledPane.css" text="Change Markov Decision Process">
+               <content>
+                  <AnchorPane fx:id="anchorPaneTitledPaneOptimalPolicy" depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="New budget to fitness function:">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <LineChart fx:id="fitnessPlot" stylesheets="@plotBudgetToFitness.css" title="New budget to fitness function" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                                 <xAxis>
+                                    <NumberAxis fx:id="fitnessPlotXAxis" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis fx:id="fitnessPlotYAxis" side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                              <TextField fx:id="textFieldFitnessFunction" alignment="CENTER_RIGHT" promptText="Please provide string" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="The function that maps the budget to the &#10;fitness. Please provide a function of the form&#10;&quot;fitness = x&quot;, using x to denote the budget.&#10;&#10;This function cannot be longer than 200 characters&#10;and cannot include a &quot;;&quot;. All functionality provided &#10;in R can be used here (e.g., exp(x) or log(x) ). " wrapText="true" />
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+            </TitledPane>
+            <TitledPane expanded="false" prefWidth="588.0" stylesheets="@../CSSLayout/normalTitledPane.css" text="Change environment">
+               <content>
+                  <AnchorPane fx:id="anchorPaneTitledPaneOptimalPolicy1" depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Not implemented yet">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+            </TitledPane>
+            <TitledPane stylesheets="@../CSSLayout/normalTitledPane.css" text="Change estimation procedure">
+               <content>
+                  <AnchorPane depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0">
+                     <children>
+                        <GridPane layoutX="11.199999809265137" layoutY="11.199999809265137" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="New stopping criteria" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <CheckBox fx:id="checkBoxStoppingCriteriaTime" mnemonicParsing="false" stylesheets="@../CSSLayout/normalCheckBox.css" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkBoxStoppingCriteriaConvergence" mnemonicParsing="false" stylesheets="@../CSSLayout/normalCheckBox.css" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkBoxAdditionalIterations" mnemonicParsing="false" stylesheets="@../CSSLayout/normalCheckBox.css" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </CheckBox>
+                              <ComboBox fx:id="comboBoxStoppingCriteriaTimeUnits" prefWidth="200.0" stylesheets="@../CSSLayout/normalComboBox.css" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <TextField fx:id="textFieldStoppingCriteriaTime" disable="true" promptText="Maximum time" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                                 <tooltip>
+                                    <Tooltip prefWidth="300.0" text="If this stopping criteria is active (i.e., the box is selected), the agent will stop after the specified amount of time." wrapText="true">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </TextField>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Maximum time:" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="textFieldStoppingCriteriaConvergence" disable="true" promptText="Epsilon" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                                 <tooltip>
+                                    <Tooltip prefWidth="300.0" text="If this stopping criteria is active (i.e., the box is selected), the agent will stop when the largest change in between iterations (called the delta) is smaller than the specified level (the epsilon).  This is called the epsilon-delta definition of the limit." wrapText="true">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </TextField>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Epsilon-delta &#10;convergence:" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Batch updating:" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <CheckBox fx:id="checkBoxBatchUpdating" mnemonicParsing="false" selected="true" stylesheets="@../CSSLayout/normalCheckBox.css" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                                 <tooltip>
+                                    <Tooltip prefWidth="300.0" text="Should all values in the value function be recomputed before the new value function is used? If false, each computation of a value function entry uses the most recently computed entries. If true the update uses the estimates from the last iteration." wrapText="true">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </CheckBox>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Indifference point:" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="6" />
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Optimizer:" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="comboBoxOptimizer" maxWidth="1.7976931348623157E308" stylesheets="@../CSSLayout/normalComboBox.css" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                                 <tooltip>
+                                    <Tooltip prefWidth="300.0" text="What exactly the optimizer does depends on the agent type that is used. There are, however, three broad categories: no optimizer, lossless optimizer, or a lossy optimizer. The lossy optimizer might not give correct results (specifically, the precision of floating point numbers is not insured), but will run quite much faster. The lossless optimizer should result in the same results as when no optimizer is used." wrapText="true">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </ComboBox>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Additional iterations (max):" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Spinner fx:id="spinnerIterations" disable="true" editable="true" maxHeight="20.0" maxWidth="100.0" minHeight="20.0" stylesheets="@../CSSLayout/normalSpinner.css" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Spinner>
+                              <TextField fx:id="textFieldIndifferencePoint" promptText="Indifference point" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" prefWidth="300.0" text="For each possible action the agent computes an expected (fitness or value) outcome.  If there is no difference between the outcomes of action, the difference in expected outcomes is 0 - in the limit. However, because the run time is limited, these differences are not always recognized as the same value (e.g., 0.0000000001 != 0.000000000011).  The indifference point is the smallest difference in outcomes between actions that the agent is still responsive to (if the difference smaller, the two values are treated as equal)." wrapText="true">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="New agent type" GridPane.columnSpan="2">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="comboBoxAgentSelection" maxWidth="1.7976931348623157E308" promptText="Please select an agent type" stylesheets="@../CSSLayout/normalComboBox.css" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+            </TitledPane>
+            <TitledPane collapsible="false" prefWidth="588.0" stylesheets="@../CSSLayout/normalTitledPane.css" text="Retrain agents">
+               <content>
+                  <AnchorPane fx:id="anchorPaneTitledPaneOptimalPolicy21" depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Save retrained agents to:">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="textfieldFolderOutput" disable="true" editable="false" promptText="Path\To\Directory" stylesheets="@../CSSLayout/normalTextField.css" GridPane.columnIndex="1">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <GridPane GridPane.columnIndex="2">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button fx:id="buttonBrowseOutput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../CSSLayout/normalButton.css" text="Browse" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                              <Label stylesheets="@../CSSLayout/normalLabel.css" text="Number of threads:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Spinner fx:id="spinnerThreads" editable="true" maxHeight="20.0" maxWidth="100.0" minHeight="20.0" stylesheets="@../CSSLayout/normalSpinner.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Spinner>
+                              <Button fx:id="buttonRetrainAgents" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="200.0" stylesheets="@../CSSLayout/importantButton.css" text="Retrain agents" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+            </TitledPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
